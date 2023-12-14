@@ -16,8 +16,8 @@ module.exports = class Product {
       [this.title, this.price, this.description, this.imageUrl])
   }
 
-  static deleteById() {
-
+  static deleteById(id) {
+    return db.execute('DELETE FROM products WHERE products.id = ?', [id])
   }
 
   static fetchAll() {
